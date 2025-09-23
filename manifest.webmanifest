@@ -5,7 +5,7 @@
     "backgroud_color":"#ff9800",
     "themer_color":"#c66900",
     "orientation":"portrait",
-    "display":"standolone",
+    "display":"standalone",
     "start_url":".",
     "scope":".",
     "icons":[
