@@ -6,7 +6,7 @@ let btnCancelPost;
 /**
  * CUANDO SE CARGE TODO NUESTRO DOM
  */
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   main = document.querySelector("#main");
   modalPost = document.getElementById("modal-post-section");
   addPost = document.getElementById("btn-upload-post");
@@ -14,6 +14,12 @@ window.addEventListener("load", () => {
   btnCancelPost = document.getElementById("btn-post-cancel");
   addPost.addEventListener("click", ShowPostModal);
   btnCancelPost.addEventListener("click", ClousePostModal);
+  if ("serviceWorker" in navigator) {
+    const response = await navigator.serviceWorker.register("sw.js");
+    if (response) {
+      console.log("Service work registrado");
+    }
+  }
 });
 /**
  * FUNCIONES
